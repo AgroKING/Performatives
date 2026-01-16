@@ -1,0 +1,1391 @@
+[
+  {
+    "id": "i7sj9b2w8",
+    "title": "Mobile Developer",
+    "company": "QuantumLeap",
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "salary": {
+      "min": 99000,
+      "max": 121000,
+      "currency": "USD"
+    },
+    "type": "Contract",
+    "postedAt": "2025-12-29T20:16:44.615Z",
+    "experienceLevel": 1,
+    "skills": [
+      "Figma",
+      "Linux",
+      "Python",
+      "Node.js"
+    ],
+    "matchScore": 71
+  },
+  {
+    "id": "vgul3cr89",
+    "title": "Machine Learning Engineer",
+    "company": "PixelPerfect",
+    "location": {
+      "city": "Sydney",
+      "country": "Australia"
+    },
+    "salary": {
+      "min": 96000,
+      "max": 106000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-14T20:16:44.616Z",
+    "experienceLevel": 3,
+    "skills": [
+      "React",
+      "Rust",
+      "Ansible",
+      "TypeScript",
+      "GraphQL",
+      "Rest API"
+    ],
+    "matchScore": 75
+  },
+  {
+    "id": "n4qy7pdbr",
+    "title": "Mobile Developer",
+    "company": "TechCorp",
+    "location": {
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "salary": {
+      "min": 72000,
+      "max": 94000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-21T20:16:44.616Z",
+    "experienceLevel": 9,
+    "skills": [
+      "React",
+      "Node.js",
+      "NoSQL"
+    ],
+    "matchScore": 68
+  },
+  {
+    "id": "r4dwqrx5v",
+    "title": "DevOps Engineer",
+    "company": "WebSolutions",
+    "location": {
+      "city": "San Francisco",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 138000,
+      "max": 175000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-04T20:16:44.616Z",
+    "experienceLevel": 6,
+    "skills": [
+      "Python",
+      "Node.js",
+      "Docker",
+      "Rust",
+      "TypeScript"
+    ],
+    "matchScore": 93
+  },
+  {
+    "id": "mpwgut9ob",
+    "title": "Data Scientist",
+    "company": "PixelPerfect",
+    "location": {
+      "city": "San Francisco",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 79000,
+      "max": 95000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-24T20:16:44.616Z",
+    "experienceLevel": 10,
+    "skills": [
+      "SQL",
+      "TypeScript",
+      "Python",
+      "GraphQL",
+      "CI/CD",
+      "Docker",
+      "Rust"
+    ],
+    "matchScore": 86
+  },
+  {
+    "id": "e8257ix3v",
+    "title": "Systems Administrator",
+    "company": "NetWorks",
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "salary": {
+      "min": 132000,
+      "max": 179000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-24T20:16:44.616Z",
+    "experienceLevel": 9,
+    "skills": [
+      "CI/CD",
+      "Rest API",
+      "NoSQL",
+      "Python"
+    ],
+    "matchScore": 82
+  },
+  {
+    "id": "eslyjx3ig",
+    "title": "Data Scientist",
+    "company": "QuantumLeap",
+    "location": {
+      "city": "Seattle",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 131000,
+      "max": 176000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-28T20:16:44.616Z",
+    "experienceLevel": 10,
+    "skills": [
+      "Kubernetes",
+      "Sketch",
+      "Node.js"
+    ],
+    "matchScore": 93
+  },
+  {
+    "id": "oni5l1gjx",
+    "title": "Security Analyst",
+    "company": "QuantumLeap",
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "salary": {
+      "min": 80000,
+      "max": 100000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-03T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "React",
+      "Node.js",
+      "Rust",
+      "AWS",
+      "Python",
+      "Go",
+      "TypeScript",
+      "Docker"
+    ],
+    "matchScore": 85
+  },
+  {
+    "id": "yxgcsek2v",
+    "title": "QA Engineer",
+    "company": "Appify",
+    "location": {
+      "city": "Zurich",
+      "country": "Switzerland"
+    },
+    "salary": {
+      "min": 84000,
+      "max": 109000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-18T20:16:44.616Z",
+    "experienceLevel": 1,
+    "skills": [
+      "SQL",
+      "React",
+      "NoSQL",
+      "CI/CD",
+      "Terraform",
+      "Node.js",
+      "Rest API"
+    ],
+    "matchScore": 94
+  },
+  {
+    "id": "w8zxbtqjv",
+    "title": "Cloud Engineer",
+    "company": "LogicGate",
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    "salary": {
+      "min": 131000,
+      "max": 152000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2026-01-13T20:16:44.616Z",
+    "experienceLevel": 9,
+    "skills": [
+      "Kubernetes",
+      "Go",
+      "NoSQL",
+      "GraphQL",
+      "Ansible",
+      "Figma",
+      "Terraform"
+    ],
+    "matchScore": 76
+  },
+  {
+    "id": "ez3u530ro",
+    "title": "Frontend Developer",
+    "company": "NetWorks",
+    "location": {
+      "city": "San Francisco",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 112000,
+      "max": 162000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-20T20:16:44.616Z",
+    "experienceLevel": 8,
+    "skills": [
+      "Kubernetes",
+      "AWS",
+      "Node.js",
+      "Figma",
+      "NoSQL",
+      "Docker"
+    ],
+    "matchScore": 79
+  },
+  {
+    "id": "i8gjsipnv",
+    "title": "Frontend Developer",
+    "company": "NetWorks",
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    "salary": {
+      "min": 65000,
+      "max": 92000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-28T20:16:44.616Z",
+    "experienceLevel": 3,
+    "skills": [
+      "SQL",
+      "Rust",
+      "CI/CD",
+      "Linux",
+      "TypeScript",
+      "GraphQL",
+      "React"
+    ],
+    "matchScore": 88
+  },
+  {
+    "id": "jsjmw29jz",
+    "title": "Data Scientist",
+    "company": "NetWorks",
+    "location": {
+      "city": "Austin",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 150000,
+      "max": 176000,
+      "currency": "USD"
+    },
+    "type": "Freelance",
+    "postedAt": "2025-12-18T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "AWS",
+      "Java",
+      "Linux",
+      "Node.js",
+      "TypeScript"
+    ],
+    "matchScore": 72
+  },
+  {
+    "id": "bxc31dn55",
+    "title": "Mobile Developer",
+    "company": "SoftServe",
+    "location": {
+      "city": "London",
+      "country": "UK"
+    },
+    "salary": {
+      "min": 133000,
+      "max": 149000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-25T20:16:44.616Z",
+    "experienceLevel": 9,
+    "skills": [
+      "Ansible",
+      "Terraform",
+      "Docker",
+      "Python"
+    ],
+    "matchScore": 82
+  },
+  {
+    "id": "r7dl5t9ml",
+    "title": "Machine Learning Engineer",
+    "company": "ByteBuilders",
+    "location": {
+      "city": "Sydney",
+      "country": "Australia"
+    },
+    "salary": {
+      "min": 73000,
+      "max": 117000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-23T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "Sketch",
+      "CI/CD",
+      "TypeScript",
+      "Java",
+      "Go",
+      "Linux",
+      "NoSQL",
+      "Python"
+    ],
+    "matchScore": 72
+  },
+  {
+    "id": "zcg2paecg",
+    "title": "Cloud Engineer",
+    "company": "TechCorp",
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "salary": {
+      "min": 140000,
+      "max": 190000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-26T20:16:44.616Z",
+    "experienceLevel": 8,
+    "skills": [
+      "Ansible",
+      "Java",
+      "Rust",
+      "Python"
+    ],
+    "matchScore": 93
+  },
+  {
+    "id": "lrzsza4t4",
+    "title": "DevOps Engineer",
+    "company": "CloudNet",
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore"
+    },
+    "salary": {
+      "min": 127000,
+      "max": 145000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-31T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "Figma",
+      "Sketch",
+      "React",
+      "Rest API"
+    ],
+    "matchScore": 61
+  },
+  {
+    "id": "wai8xn0p8",
+    "title": "Machine Learning Engineer",
+    "company": "InnoSys",
+    "location": {
+      "city": "Paris",
+      "country": "France"
+    },
+    "salary": {
+      "min": 105000,
+      "max": 149000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2026-01-12T20:16:44.616Z",
+    "experienceLevel": 6,
+    "skills": [
+      "Kubernetes",
+      "Python",
+      "SQL",
+      "Go"
+    ],
+    "matchScore": 87
+  },
+  {
+    "id": "mxbyvsiaz",
+    "title": "Mobile Developer",
+    "company": "PixelPerfect",
+    "location": {
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "salary": {
+      "min": 95000,
+      "max": 120000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-15T20:16:44.616Z",
+    "experienceLevel": 3,
+    "skills": [
+      "Rest API",
+      "Go",
+      "SQL",
+      "Linux"
+    ],
+    "matchScore": 65
+  },
+  {
+    "id": "dpt9675tf",
+    "title": "UX/UI Designer",
+    "company": "LogicGate",
+    "location": {
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "salary": {
+      "min": 134000,
+      "max": 179000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-18T20:16:44.616Z",
+    "experienceLevel": 8,
+    "skills": [
+      "Ansible",
+      "NoSQL",
+      "SQL",
+      "Linux",
+      "Terraform",
+      "Java"
+    ],
+    "matchScore": 83
+  },
+  {
+    "id": "jtumg2552",
+    "title": "Data Scientist",
+    "company": "PixelPerfect",
+    "location": {
+      "city": "Boston",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 111000,
+      "max": 130000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-21T20:16:44.616Z",
+    "experienceLevel": 5,
+    "skills": [
+      "GraphQL",
+      "NoSQL",
+      "Docker"
+    ],
+    "matchScore": 96
+  },
+  {
+    "id": "zivifd9tf",
+    "title": "Systems Administrator",
+    "company": "InnoSys",
+    "location": {
+      "city": "Austin",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 115000,
+      "max": 160000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-11T20:16:44.616Z",
+    "experienceLevel": 8,
+    "skills": [
+      "SQL",
+      "Figma",
+      "React",
+      "NoSQL",
+      "Ansible"
+    ],
+    "matchScore": 80
+  },
+  {
+    "id": "xi7fi3vwr",
+    "title": "UX/UI Designer",
+    "company": "NetWorks",
+    "location": {
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "salary": {
+      "min": 95000,
+      "max": 128000,
+      "currency": "USD"
+    },
+    "type": "Freelance",
+    "postedAt": "2025-12-26T20:16:44.616Z",
+    "experienceLevel": 9,
+    "skills": [
+      "SQL",
+      "React",
+      "Figma",
+      "CI/CD",
+      "Node.js",
+      "Sketch",
+      "Docker",
+      "GraphQL"
+    ],
+    "matchScore": 62
+  },
+  {
+    "id": "6y3isfc5c",
+    "title": "Cloud Engineer",
+    "company": "WebSolutions",
+    "location": {
+      "city": "Austin",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 126000,
+      "max": 158000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-04T20:16:44.616Z",
+    "experienceLevel": 3,
+    "skills": [
+      "Node.js",
+      "Terraform",
+      "Kubernetes",
+      "TypeScript"
+    ],
+    "matchScore": 65
+  },
+  {
+    "id": "j2rzj8vrs",
+    "title": "Database Administrator",
+    "company": "TechCorp",
+    "location": {
+      "city": "Zurich",
+      "country": "Switzerland"
+    },
+    "salary": {
+      "min": 63000,
+      "max": 79000,
+      "currency": "USD"
+    },
+    "type": "Internship",
+    "postedAt": "2026-01-02T20:16:44.616Z",
+    "experienceLevel": 8,
+    "skills": [
+      "Python",
+      "Kubernetes",
+      "Docker",
+      "Rust",
+      "SQL"
+    ],
+    "matchScore": 95
+  },
+  {
+    "id": "fe2xe6bgb",
+    "title": "Data Scientist",
+    "company": "AgileSoft",
+    "location": {
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "salary": {
+      "min": 110000,
+      "max": 120000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-14T20:16:44.616Z",
+    "experienceLevel": 3,
+    "skills": [
+      "SQL",
+      "Figma",
+      "Ansible",
+      "Node.js",
+      "Rust",
+      "NoSQL",
+      "React"
+    ],
+    "matchScore": 63
+  },
+  {
+    "id": "pqrbc5iao",
+    "title": "DevOps Engineer",
+    "company": "FutureTech",
+    "location": {
+      "city": "Sydney",
+      "country": "Australia"
+    },
+    "salary": {
+      "min": 97000,
+      "max": 135000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-20T20:16:44.616Z",
+    "experienceLevel": 5,
+    "skills": [
+      "Rust",
+      "NoSQL",
+      "CI/CD",
+      "Figma",
+      "TypeScript",
+      "Terraform",
+      "AWS"
+    ],
+    "matchScore": 63
+  },
+  {
+    "id": "u24yuq894",
+    "title": "QA Engineer",
+    "company": "WebSolutions",
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    "salary": {
+      "min": 116000,
+      "max": 135000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-19T20:16:44.616Z",
+    "experienceLevel": 10,
+    "skills": [
+      "Python",
+      "Java",
+      "Sketch",
+      "Terraform",
+      "Node.js",
+      "Go"
+    ],
+    "matchScore": 67
+  },
+  {
+    "id": "0fi7l6wep",
+    "title": "Backend Engineer",
+    "company": "PixelPerfect",
+    "location": {
+      "city": "Berlin",
+      "country": "Germany"
+    },
+    "salary": {
+      "min": 74000,
+      "max": 107000,
+      "currency": "USD"
+    },
+    "type": "Part-time",
+    "postedAt": "2026-01-10T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "CI/CD",
+      "Docker",
+      "Figma",
+      "GraphQL",
+      "TypeScript",
+      "NoSQL",
+      "Go",
+      "Sketch"
+    ],
+    "matchScore": 85
+  },
+  {
+    "id": "4v1zlxyda",
+    "title": "Product Manager",
+    "company": "SoftServe",
+    "location": {
+      "city": "Sydney",
+      "country": "Australia"
+    },
+    "salary": {
+      "min": 69000,
+      "max": 89000,
+      "currency": "USD"
+    },
+    "type": "Contract",
+    "postedAt": "2026-01-15T20:16:44.616Z",
+    "experienceLevel": 4,
+    "skills": [
+      "Figma",
+      "Java",
+      "TypeScript",
+      "CI/CD",
+      "Node.js",
+      "Go",
+      "React"
+    ],
+    "matchScore": 85
+  },
+  {
+    "id": "2vnnmlquu",
+    "title": "DevOps Engineer",
+    "company": "Appify",
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    "salary": {
+      "min": 73000,
+      "max": 103000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-05T20:16:44.616Z",
+    "experienceLevel": 3,
+    "skills": [
+      "GraphQL",
+      "Python",
+      "Linux",
+      "Node.js",
+      "Terraform"
+    ],
+    "matchScore": 88
+  },
+  {
+    "id": "feoc9w4nc",
+    "title": "Cloud Engineer",
+    "company": "AgileSoft",
+    "location": {
+      "city": "Paris",
+      "country": "France"
+    },
+    "salary": {
+      "min": 85000,
+      "max": 127000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-22T20:16:44.616Z",
+    "experienceLevel": 2,
+    "skills": [
+      "Docker",
+      "Python",
+      "Java",
+      "Rust",
+      "Terraform"
+    ],
+    "matchScore": 98
+  },
+  {
+    "id": "08tezjizu",
+    "title": "UX/UI Designer",
+    "company": "CodeCrafters",
+    "location": {
+      "city": "Boston",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 129000,
+      "max": 165000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-08T20:16:44.616Z",
+    "experienceLevel": 5,
+    "skills": [
+      "Java",
+      "Python",
+      "GraphQL",
+      "Sketch",
+      "Node.js",
+      "Rust",
+      "Go"
+    ],
+    "matchScore": 65
+  },
+  {
+    "id": "8mqle9zsl",
+    "title": "Security Analyst",
+    "company": "WebSolutions",
+    "location": {
+      "city": "Austin",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 82000,
+      "max": 110000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2026-01-09T20:16:44.616Z",
+    "experienceLevel": 2,
+    "skills": [
+      "Python",
+      "TypeScript",
+      "AWS",
+      "NoSQL"
+    ],
+    "matchScore": 63
+  },
+  {
+    "id": "dnsqhd62x",
+    "title": "Systems Administrator",
+    "company": "InnoSys",
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "salary": {
+      "min": 89000,
+      "max": 132000,
+      "currency": "USD"
+    },
+    "type": "Contract",
+    "postedAt": "2025-12-21T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "Sketch",
+      "NoSQL",
+      "Ansible",
+      "Rust",
+      "Python"
+    ],
+    "matchScore": 89
+  },
+  {
+    "id": "iflsg39sa",
+    "title": "Database Administrator",
+    "company": "AgileSoft",
+    "location": {
+      "city": "Austin",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 111000,
+      "max": 151000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-18T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "TypeScript",
+      "Figma",
+      "Docker",
+      "Python"
+    ],
+    "matchScore": 82
+  },
+  {
+    "id": "7434jzd95",
+    "title": "Machine Learning Engineer",
+    "company": "TechCorp",
+    "location": {
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "salary": {
+      "min": 109000,
+      "max": 154000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-30T20:16:44.616Z",
+    "experienceLevel": 1,
+    "skills": [
+      "Node.js",
+      "GraphQL",
+      "CI/CD",
+      "Ansible",
+      "Kubernetes",
+      "TypeScript"
+    ],
+    "matchScore": 96
+  },
+  {
+    "id": "xl8k1n28o",
+    "title": "Data Scientist",
+    "company": "CloudNet",
+    "location": {
+      "city": "New York",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 84000,
+      "max": 115000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-09T20:16:44.616Z",
+    "experienceLevel": 10,
+    "skills": [
+      "Python",
+      "Rust",
+      "Ansible",
+      "SQL",
+      "Rest API"
+    ],
+    "matchScore": 84
+  },
+  {
+    "id": "kcz9q1hau",
+    "title": "Software Architect",
+    "company": "FutureTech",
+    "location": {
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "salary": {
+      "min": 128000,
+      "max": 165000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-07T20:16:44.616Z",
+    "experienceLevel": 4,
+    "skills": [
+      "Rest API",
+      "TypeScript",
+      "Go",
+      "React"
+    ],
+    "matchScore": 77
+  },
+  {
+    "id": "yzyz4cxjg",
+    "title": "Software Architect",
+    "company": "QuantumLeap",
+    "location": {
+      "city": "New York",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 123000,
+      "max": 150000,
+      "currency": "USD"
+    },
+    "type": "Internship",
+    "postedAt": "2025-12-31T20:16:44.616Z",
+    "experienceLevel": 9,
+    "skills": [
+      "GraphQL",
+      "React",
+      "Docker",
+      "Sketch"
+    ],
+    "matchScore": 66
+  },
+  {
+    "id": "0r4rexwff",
+    "title": "Security Analyst",
+    "company": "CodeCrafters",
+    "location": {
+      "city": "Seattle",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 84000,
+      "max": 118000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-29T20:16:44.616Z",
+    "experienceLevel": 5,
+    "skills": [
+      "Figma",
+      "AWS",
+      "Ansible",
+      "Terraform"
+    ],
+    "matchScore": 61
+  },
+  {
+    "id": "aolyckmky",
+    "title": "Backend Engineer",
+    "company": "ByteBuilders",
+    "location": {
+      "city": "Boston",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 100000,
+      "max": 138000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-29T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "Java",
+      "Python",
+      "GraphQL",
+      "React",
+      "Rest API",
+      "Kubernetes"
+    ],
+    "matchScore": 93
+  },
+  {
+    "id": "j8spzfgb",
+    "title": "Data Scientist",
+    "company": "FutureTech",
+    "location": {
+      "city": "San Francisco",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 139000,
+      "max": 151000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-21T20:16:44.616Z",
+    "experienceLevel": 5,
+    "skills": [
+      "Linux",
+      "Python",
+      "Kubernetes"
+    ],
+    "matchScore": 88
+  },
+  {
+    "id": "drxpfwsnl",
+    "title": "DevOps Engineer",
+    "company": "DataMinds",
+    "location": {
+      "city": "Seattle",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 99000,
+      "max": 132000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-03T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "SQL",
+      "React",
+      "Ansible"
+    ],
+    "matchScore": 72
+  },
+  {
+    "id": "sdeaygi4z",
+    "title": "Data Scientist",
+    "company": "PixelPerfect",
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    "salary": {
+      "min": 127000,
+      "max": 175000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-18T20:16:44.616Z",
+    "experienceLevel": 6,
+    "skills": [
+      "AWS",
+      "Python",
+      "CI/CD",
+      "Rust",
+      "Rest API"
+    ],
+    "matchScore": 69
+  },
+  {
+    "id": "0rbsbyknm",
+    "title": "Backend Engineer",
+    "company": "TechCorp",
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "salary": {
+      "min": 149000,
+      "max": 192000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-02T20:16:44.616Z",
+    "experienceLevel": 9,
+    "skills": [
+      "TypeScript",
+      "Linux",
+      "React",
+      "Sketch"
+    ],
+    "matchScore": 83
+  },
+  {
+    "id": "qj1dzj4qh",
+    "title": "Product Manager",
+    "company": "LogicGate",
+    "location": {
+      "city": "Sydney",
+      "country": "Australia"
+    },
+    "salary": {
+      "min": 70000,
+      "max": 120000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-25T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "Terraform",
+      "Rest API",
+      "Java"
+    ],
+    "matchScore": 89
+  },
+  {
+    "id": "hvcae8w3o",
+    "title": "DevOps Engineer",
+    "company": "NetWorks",
+    "location": {
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "salary": {
+      "min": 65000,
+      "max": 86000,
+      "currency": "USD"
+    },
+    "type": "Part-time",
+    "postedAt": "2025-12-18T20:16:44.616Z",
+    "experienceLevel": 6,
+    "skills": [
+      "Go",
+      "AWS",
+      "Docker",
+      "Figma",
+      "React"
+    ],
+    "matchScore": 72
+  },
+  {
+    "id": "o9s7ezi6q",
+    "title": "DevOps Engineer",
+    "company": "LogicGate",
+    "location": {
+      "city": "New York",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 70000,
+      "max": 119000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-24T20:16:44.616Z",
+    "experienceLevel": 9,
+    "skills": [
+      "Rust",
+      "React",
+      "GraphQL",
+      "Linux"
+    ],
+    "matchScore": 66
+  },
+  {
+    "id": "idqcdcw8x",
+    "title": "Cloud Engineer",
+    "company": "LogicGate",
+    "location": {
+      "city": "London",
+      "country": "UK"
+    },
+    "salary": {
+      "min": 103000,
+      "max": 122000,
+      "currency": "USD"
+    },
+    "type": "Freelance",
+    "postedAt": "2025-12-30T20:16:44.616Z",
+    "experienceLevel": 9,
+    "skills": [
+      "Python",
+      "Node.js",
+      "React",
+      "Rust",
+      "Linux",
+      "AWS",
+      "SQL"
+    ],
+    "matchScore": 76
+  },
+  {
+    "id": "jvkq03ask",
+    "title": "Data Scientist",
+    "company": "Appify",
+    "location": {
+      "city": "Boston",
+      "country": "USA"
+    },
+    "salary": {
+      "min": 89000,
+      "max": 133000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2025-12-23T20:16:44.616Z",
+    "experienceLevel": 8,
+    "skills": [
+      "React",
+      "GraphQL",
+      "Go",
+      "Figma",
+      "Rust",
+      "Rest API",
+      "CI/CD",
+      "Java"
+    ],
+    "matchScore": 85
+  },
+  {
+    "id": "qg7m2esli",
+    "title": "Security Analyst",
+    "company": "InnoSys",
+    "location": {
+      "city": "Sydney",
+      "country": "Australia"
+    },
+    "salary": {
+      "min": 123000,
+      "max": 166000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2026-01-01T20:16:44.616Z",
+    "experienceLevel": 8,
+    "skills": [
+      "React",
+      "CI/CD",
+      "Docker",
+      "Sketch"
+    ],
+    "matchScore": 89
+  },
+  {
+    "id": "enalzrxbz",
+    "title": "Systems Administrator",
+    "company": "WebSolutions",
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore"
+    },
+    "salary": {
+      "min": 120000,
+      "max": 145000,
+      "currency": "USD"
+    },
+    "type": "Freelance",
+    "postedAt": "2026-01-13T20:16:44.616Z",
+    "experienceLevel": 8,
+    "skills": [
+      "Java",
+      "Python",
+      "Node.js",
+      "Linux",
+      "Go"
+    ],
+    "matchScore": 90
+  },
+  {
+    "id": "sjeme8k43",
+    "title": "Full Stack Developer",
+    "company": "SoftServe",
+    "location": {
+      "city": "London",
+      "country": "UK"
+    },
+    "salary": {
+      "min": 92000,
+      "max": 135000,
+      "currency": "USD"
+    },
+    "type": "Full-time",
+    "postedAt": "2025-12-18T20:16:44.616Z",
+    "experienceLevel": 6,
+    "skills": [
+      "React",
+      "TypeScript",
+      "Docker",
+      "Java",
+      "CI/CD",
+      "Sketch",
+      "Node.js"
+    ],
+    "matchScore": 76
+  },
+  {
+    "id": "g5uz3wpev",
+    "title": "Database Administrator",
+    "company": "NetWorks",
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    "salary": {
+      "min": 113000,
+      "max": 129000,
+      "currency": "USD"
+    },
+    "type": "Remote",
+    "postedAt": "2026-01-12T20:16:44.616Z",
+    "experienceLevel": 7,
+    "skills": [
+      "Node.js",
+      "Ansible",
+      "Kubernetes",
+      "SQL",
+      "React",
+      "Docker"
+    ],
+    "matchScore": 74
+  }
+]
