@@ -1,0 +1,38 @@
+# Problem-1: FastAPI Job Matching System - Docker Compose
+# Simple orchestration for local development and testing
+
+version: '3.8'
+
+services:
+  # FastAPI Job Matching Service
+  job-matching-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: job-matching-api
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - LOG_LEVEL=info
+    volumes:
+      # Mount source code for development (hot reload)
+      # Comment out for production
+      - ./app:/app/app:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - job-matching-network
+
+networks:
+  job-matching-network:
+    driver: bridge
+
+# Optional: Add volumes for persistent data if needed
+# volumes:
+#   job-matching-data:
