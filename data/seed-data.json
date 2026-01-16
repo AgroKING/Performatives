@@ -1,0 +1,863 @@
+{
+  "taxonomy": {
+    "version": "1.0.0",
+    "last_updated": "2026-01-17T00:38:17+05:30",
+    "categories": {
+      "Frontend": {
+        "name": "Frontend Development",
+        "description": "Client-side web development technologies and frameworks",
+        "skill_count": 12
+      },
+      "Backend": {
+        "name": "Backend Development",
+        "description": "Server-side programming, APIs, and business logic",
+        "skill_count": 11
+      },
+      "DevOps": {
+        "name": "DevOps & Infrastructure",
+        "description": "Deployment, CI/CD, containerization, and cloud infrastructure",
+        "skill_count": 9
+      },
+      "Database": {
+        "name": "Database & Data Management",
+        "description": "Database design, query optimization, and data modeling",
+        "skill_count": 8
+      }
+    },
+    "skills": [
+      {
+        "id": "fe-001",
+        "name": "HTML",
+        "category": "Frontend",
+        "difficulty": 2,
+        "typical_learning_time_weeks": 2,
+        "prerequisites": [],
+        "description": "Markup language for structuring web content",
+        "tags": ["web", "markup", "fundamentals"]
+      },
+      {
+        "id": "fe-002",
+        "name": "CSS",
+        "category": "Frontend",
+        "difficulty": 3,
+        "typical_learning_time_weeks": 3,
+        "prerequisites": ["fe-001"],
+        "description": "Styling language for web pages",
+        "tags": ["web", "styling", "fundamentals"]
+      },
+      {
+        "id": "fe-003",
+        "name": "JavaScript",
+        "category": "Frontend",
+        "difficulty": 5,
+        "typical_learning_time_weeks": 8,
+        "prerequisites": ["fe-001", "fe-002"],
+        "description": "Programming language for interactive web applications",
+        "tags": ["programming", "web", "fundamentals"]
+      },
+      {
+        "id": "fe-004",
+        "name": "TypeScript",
+        "category": "Frontend",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": ["fe-003"],
+        "description": "Typed superset of JavaScript",
+        "tags": ["programming", "type-safety", "advanced"]
+      },
+      {
+        "id": "fe-005",
+        "name": "React",
+        "category": "Frontend",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 6,
+        "prerequisites": ["fe-003"],
+        "description": "Component-based JavaScript library for building UIs",
+        "tags": ["framework", "library", "spa"]
+      },
+      {
+        "id": "fe-006",
+        "name": "Vue.js",
+        "category": "Frontend",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 5,
+        "prerequisites": ["fe-003"],
+        "description": "Progressive JavaScript framework for building UIs",
+        "tags": ["framework", "spa"]
+      },
+      {
+        "id": "fe-007",
+        "name": "Angular",
+        "category": "Frontend",
+        "difficulty": 8,
+        "typical_learning_time_weeks": 8,
+        "prerequisites": ["fe-004"],
+        "description": "Full-featured TypeScript framework for web applications",
+        "tags": ["framework", "spa", "enterprise"]
+      },
+      {
+        "id": "fe-008",
+        "name": "Next.js",
+        "category": "Frontend",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": ["fe-005"],
+        "description": "React framework for production with SSR and SSG",
+        "tags": ["framework", "ssr", "react"]
+      },
+      {
+        "id": "fe-009",
+        "name": "Tailwind CSS",
+        "category": "Frontend",
+        "difficulty": 4,
+        "typical_learning_time_weeks": 2,
+        "prerequisites": ["fe-002"],
+        "description": "Utility-first CSS framework",
+        "tags": ["styling", "framework", "utility"]
+      },
+      {
+        "id": "fe-010",
+        "name": "Webpack",
+        "category": "Frontend",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 3,
+        "prerequisites": ["fe-003"],
+        "description": "Module bundler for JavaScript applications",
+        "tags": ["build-tools", "bundler"]
+      },
+      {
+        "id": "fe-011",
+        "name": "Redux",
+        "category": "Frontend",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 3,
+        "prerequisites": ["fe-005"],
+        "description": "State management library for JavaScript apps",
+        "tags": ["state-management", "react"]
+      },
+      {
+        "id": "fe-012",
+        "name": "GraphQL Client",
+        "category": "Frontend",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 3,
+        "prerequisites": ["fe-003"],
+        "description": "Client-side GraphQL implementation and data fetching",
+        "tags": ["api", "data-fetching"]
+      },
+      {
+        "id": "be-001",
+        "name": "Node.js",
+        "category": "Backend",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 6,
+        "prerequisites": ["fe-003"],
+        "description": "JavaScript runtime for server-side development",
+        "tags": ["runtime", "javascript", "server"]
+      },
+      {
+        "id": "be-002",
+        "name": "Express.js",
+        "category": "Backend",
+        "difficulty": 5,
+        "typical_learning_time_weeks": 3,
+        "prerequisites": ["be-001"],
+        "description": "Minimal web framework for Node.js",
+        "tags": ["framework", "nodejs", "api"]
+      },
+      {
+        "id": "be-003",
+        "name": "Python",
+        "category": "Backend",
+        "difficulty": 5,
+        "typical_learning_time_weeks": 8,
+        "prerequisites": [],
+        "description": "High-level programming language for backend development",
+        "tags": ["programming", "language", "versatile"]
+      },
+      {
+        "id": "be-004",
+        "name": "Django",
+        "category": "Backend",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 6,
+        "prerequisites": ["be-003"],
+        "description": "High-level Python web framework",
+        "tags": ["framework", "python", "mvc"]
+      },
+      {
+        "id": "be-005",
+        "name": "FastAPI",
+        "category": "Backend",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": ["be-003"],
+        "description": "Modern, fast Python web framework for building APIs",
+        "tags": ["framework", "python", "api", "async"]
+      },
+      {
+        "id": "be-006",
+        "name": "REST API Design",
+        "category": "Backend",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": [],
+        "description": "Principles and patterns for RESTful API design",
+        "tags": ["api", "architecture", "design"]
+      },
+      {
+        "id": "be-007",
+        "name": "GraphQL Server",
+        "category": "Backend",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 5,
+        "prerequisites": ["be-006"],
+        "description": "Query language and runtime for APIs",
+        "tags": ["api", "graphql", "schema"]
+      },
+      {
+        "id": "be-008",
+        "name": "Microservices Architecture",
+        "category": "Backend",
+        "difficulty": 9,
+        "typical_learning_time_weeks": 8,
+        "prerequisites": ["be-006"],
+        "description": "Architectural pattern for distributed systems",
+        "tags": ["architecture", "distributed", "advanced"]
+      },
+      {
+        "id": "be-009",
+        "name": "Authentication & Authorization",
+        "category": "Backend",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": ["be-006"],
+        "description": "Security patterns including JWT, OAuth, RBAC",
+        "tags": ["security", "auth", "jwt"]
+      },
+      {
+        "id": "be-010",
+        "name": "Message Queues",
+        "category": "Backend",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": [],
+        "description": "Asynchronous messaging systems (RabbitMQ, Kafka)",
+        "tags": ["messaging", "async", "distributed"]
+      },
+      {
+        "id": "be-011",
+        "name": "Caching Strategies",
+        "category": "Backend",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 3,
+        "prerequisites": [],
+        "description": "Redis, Memcached, and caching patterns",
+        "tags": ["performance", "caching", "optimization"]
+      },
+      {
+        "id": "do-001",
+        "name": "Git",
+        "category": "DevOps",
+        "difficulty": 4,
+        "typical_learning_time_weeks": 2,
+        "prerequisites": [],
+        "description": "Version control system",
+        "tags": ["vcs", "fundamentals", "collaboration"]
+      },
+      {
+        "id": "do-002",
+        "name": "Linux/Unix",
+        "category": "DevOps",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 6,
+        "prerequisites": [],
+        "description": "Linux system administration and shell scripting",
+        "tags": ["os", "shell", "fundamentals"]
+      },
+      {
+        "id": "do-003",
+        "name": "Docker",
+        "category": "DevOps",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": ["do-002"],
+        "description": "Containerization platform",
+        "tags": ["containers", "deployment"]
+      },
+      {
+        "id": "do-004",
+        "name": "Kubernetes",
+        "category": "DevOps",
+        "difficulty": 9,
+        "typical_learning_time_weeks": 8,
+        "prerequisites": ["do-003"],
+        "description": "Container orchestration platform",
+        "tags": ["orchestration", "containers", "advanced"]
+      },
+      {
+        "id": "do-005",
+        "name": "CI/CD",
+        "category": "DevOps",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 5,
+        "prerequisites": ["do-001"],
+        "description": "Continuous Integration and Deployment pipelines",
+        "tags": ["automation", "deployment", "jenkins", "github-actions"]
+      },
+      {
+        "id": "do-006",
+        "name": "AWS",
+        "category": "DevOps",
+        "difficulty": 8,
+        "typical_learning_time_weeks": 10,
+        "prerequisites": ["do-002"],
+        "description": "Amazon Web Services cloud platform",
+        "tags": ["cloud", "infrastructure", "aws"]
+      },
+      {
+        "id": "do-007",
+        "name": "Terraform",
+        "category": "DevOps",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 5,
+        "prerequisites": ["do-006"],
+        "description": "Infrastructure as Code tool",
+        "tags": ["iac", "automation", "infrastructure"]
+      },
+      {
+        "id": "do-008",
+        "name": "Monitoring & Logging",
+        "category": "DevOps",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": [],
+        "description": "Prometheus, Grafana, ELK stack",
+        "tags": ["observability", "monitoring", "logging"]
+      },
+      {
+        "id": "do-009",
+        "name": "Nginx",
+        "category": "DevOps",
+        "difficulty": 5,
+        "typical_learning_time_weeks": 3,
+        "prerequisites": ["do-002"],
+        "description": "Web server and reverse proxy",
+        "tags": ["web-server", "proxy", "load-balancing"]
+      },
+      {
+        "id": "db-001",
+        "name": "SQL Fundamentals",
+        "category": "Database",
+        "difficulty": 5,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": [],
+        "description": "Structured Query Language basics",
+        "tags": ["sql", "fundamentals", "query"]
+      },
+      {
+        "id": "db-002",
+        "name": "PostgreSQL",
+        "category": "Database",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 5,
+        "prerequisites": ["db-001"],
+        "description": "Advanced open-source relational database",
+        "tags": ["rdbms", "sql", "postgresql"]
+      },
+      {
+        "id": "db-003",
+        "name": "MySQL",
+        "category": "Database",
+        "difficulty": 5,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": ["db-001"],
+        "description": "Popular open-source relational database",
+        "tags": ["rdbms", "sql", "mysql"]
+      },
+      {
+        "id": "db-004",
+        "name": "MongoDB",
+        "category": "Database",
+        "difficulty": 6,
+        "typical_learning_time_weeks": 4,
+        "prerequisites": [],
+        "description": "NoSQL document database",
+        "tags": ["nosql", "document-db", "mongodb"]
+      },
+      {
+        "id": "db-005",
+        "name": "Redis",
+        "category": "Database",
+        "difficulty": 5,
+        "typical_learning_time_weeks": 3,
+        "prerequisites": [],
+        "description": "In-memory data structure store",
+        "tags": ["nosql", "cache", "key-value"]
+      },
+      {
+        "id": "db-006",
+        "name": "Database Design",
+        "category": "Database",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 6,
+        "prerequisites": ["db-001"],
+        "description": "Normalization, indexing, and schema design",
+        "tags": ["design", "architecture", "optimization"]
+      },
+      {
+        "id": "db-007",
+        "name": "Query Optimization",
+        "category": "Database",
+        "difficulty": 8,
+        "typical_learning_time_weeks": 5,
+        "prerequisites": ["db-002"],
+        "description": "Performance tuning and query optimization",
+        "tags": ["performance", "optimization", "advanced"]
+      },
+      {
+        "id": "db-008",
+        "name": "Data Modeling",
+        "category": "Database",
+        "difficulty": 7,
+        "typical_learning_time_weeks": 5,
+        "prerequisites": ["db-001"],
+        "description": "Entity relationships and data architecture",
+        "tags": ["modeling", "architecture", "design"]
+      }
+    ]
+  },
+  "target_roles": [
+    {
+      "id": "role-001",
+      "title": "Senior Full Stack Developer",
+      "description": "Experienced developer capable of building complete web applications from frontend to backend with modern technologies",
+      "seniority_level": "Senior",
+      "min_experience_years": 5,
+      "required_skills": [
+        {
+          "skill_id": "fe-003",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "fe-004",
+          "minimum_proficiency": 7,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "fe-005",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "fe-008",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        },
+        {
+          "skill_id": "be-001",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "be-002",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        },
+        {
+          "skill_id": "be-006",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "db-002",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        },
+        {
+          "skill_id": "db-004",
+          "minimum_proficiency": 6,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "do-001",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        },
+        {
+          "skill_id": "do-003",
+          "minimum_proficiency": 6,
+          "importance": "Medium"
+        }
+      ],
+      "optional_skills": [
+        {
+          "skill_id": "fe-011",
+          "minimum_proficiency": 6,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "be-007",
+          "minimum_proficiency": 6,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "do-005",
+          "minimum_proficiency": 5,
+          "importance": "Low"
+        }
+      ],
+      "salary_range": {
+        "min": 100000,
+        "max": 150000,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": "role-002",
+      "title": "DevOps Engineer",
+      "description": "Infrastructure specialist focused on automation, deployment, and maintaining scalable cloud infrastructure",
+      "seniority_level": "Mid",
+      "min_experience_years": 3,
+      "required_skills": [
+        {
+          "skill_id": "do-001",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "do-002",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "do-003",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "do-004",
+          "minimum_proficiency": 7,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "do-005",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "do-006",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        },
+        {
+          "skill_id": "do-007",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        },
+        {
+          "skill_id": "do-008",
+          "minimum_proficiency": 6,
+          "importance": "High"
+        }
+      ],
+      "optional_skills": [
+        {
+          "skill_id": "be-003",
+          "minimum_proficiency": 5,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "db-002",
+          "minimum_proficiency": 5,
+          "importance": "Low"
+        },
+        {
+          "skill_id": "do-009",
+          "minimum_proficiency": 6,
+          "importance": "Medium"
+        }
+      ],
+      "salary_range": {
+        "min": 90000,
+        "max": 130000,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": "role-003",
+      "title": "Frontend Architect",
+      "description": "Senior frontend specialist responsible for designing scalable UI architectures and leading frontend teams",
+      "seniority_level": "Senior",
+      "min_experience_years": 7,
+      "required_skills": [
+        {
+          "skill_id": "fe-003",
+          "minimum_proficiency": 9,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "fe-004",
+          "minimum_proficiency": 9,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "fe-005",
+          "minimum_proficiency": 9,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "fe-008",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "fe-010",
+          "minimum_proficiency": 8,
+          "importance": "High"
+        },
+        {
+          "skill_id": "fe-011",
+          "minimum_proficiency": 8,
+          "importance": "High"
+        },
+        {
+          "skill_id": "fe-009",
+          "minimum_proficiency": 7,
+          "importance": "Medium"
+        }
+      ],
+      "optional_skills": [
+        {
+          "skill_id": "fe-006",
+          "minimum_proficiency": 6,
+          "importance": "Low"
+        },
+        {
+          "skill_id": "fe-007",
+          "minimum_proficiency": 6,
+          "importance": "Low"
+        },
+        {
+          "skill_id": "fe-012",
+          "minimum_proficiency": 7,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "do-001",
+          "minimum_proficiency": 7,
+          "importance": "Medium"
+        }
+      ],
+      "salary_range": {
+        "min": 120000,
+        "max": 180000,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": "role-004",
+      "title": "Backend Engineer (Python)",
+      "description": "Backend developer specializing in Python frameworks and API development",
+      "seniority_level": "Mid",
+      "min_experience_years": 3,
+      "required_skills": [
+        {
+          "skill_id": "be-003",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "be-005",
+          "minimum_proficiency": 7,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "be-006",
+          "minimum_proficiency": 7,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "be-009",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        },
+        {
+          "skill_id": "db-001",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        },
+        {
+          "skill_id": "db-002",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        },
+        {
+          "skill_id": "do-001",
+          "minimum_proficiency": 6,
+          "importance": "Medium"
+        }
+      ],
+      "optional_skills": [
+        {
+          "skill_id": "be-004",
+          "minimum_proficiency": 6,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "be-007",
+          "minimum_proficiency": 6,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "db-004",
+          "minimum_proficiency": 6,
+          "importance": "Low"
+        },
+        {
+          "skill_id": "be-011",
+          "minimum_proficiency": 6,
+          "importance": "Medium"
+        }
+      ],
+      "salary_range": {
+        "min": 85000,
+        "max": 120000,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": "role-005",
+      "title": "Database Administrator",
+      "description": "Specialist in database design, optimization, and maintenance for high-performance systems",
+      "seniority_level": "Senior",
+      "min_experience_years": 5,
+      "required_skills": [
+        {
+          "skill_id": "db-001",
+          "minimum_proficiency": 9,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "db-002",
+          "minimum_proficiency": 9,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "db-006",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "db-007",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "db-008",
+          "minimum_proficiency": 8,
+          "importance": "High"
+        },
+        {
+          "skill_id": "do-002",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        }
+      ],
+      "optional_skills": [
+        {
+          "skill_id": "db-003",
+          "minimum_proficiency": 7,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "db-004",
+          "minimum_proficiency": 6,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "db-005",
+          "minimum_proficiency": 7,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "be-011",
+          "minimum_proficiency": 6,
+          "importance": "Low"
+        }
+      ],
+      "salary_range": {
+        "min": 95000,
+        "max": 140000,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": "role-006",
+      "title": "Cloud Solutions Architect",
+      "description": "Enterprise architect designing and implementing scalable cloud-native solutions",
+      "seniority_level": "Lead",
+      "min_experience_years": 8,
+      "required_skills": [
+        {
+          "skill_id": "do-006",
+          "minimum_proficiency": 9,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "do-007",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "do-004",
+          "minimum_proficiency": 8,
+          "importance": "Critical"
+        },
+        {
+          "skill_id": "be-008",
+          "minimum_proficiency": 8,
+          "importance": "High"
+        },
+        {
+          "skill_id": "do-008",
+          "minimum_proficiency": 8,
+          "importance": "High"
+        },
+        {
+          "skill_id": "db-006",
+          "minimum_proficiency": 7,
+          "importance": "High"
+        },
+        {
+          "skill_id": "be-010",
+          "minimum_proficiency": 7,
+          "importance": "Medium"
+        }
+      ],
+      "optional_skills": [
+        {
+          "skill_id": "do-003",
+          "minimum_proficiency": 8,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "be-009",
+          "minimum_proficiency": 7,
+          "importance": "Medium"
+        },
+        {
+          "skill_id": "db-002",
+          "minimum_proficiency": 7,
+          "importance": "Low"
+        }
+      ],
+      "salary_range": {
+        "min": 140000,
+        "max": 200000,
+        "currency": "USD"
+      }
+    }
+  ]
+}
