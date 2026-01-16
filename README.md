@@ -489,7 +489,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## 👨‍💻 Author
 
-**Built with ❤️ by a 10x Engineer Agent**
+**Built with ❤️ by Performatives**
 
 Demonstrating expertise in:
 - Modern web development (React, Next.js, TypeScript)
