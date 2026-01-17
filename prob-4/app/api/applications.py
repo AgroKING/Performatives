@@ -254,7 +254,7 @@ def list_applications(
     - `metadata`: Pagination info (total, page, per_page, total_pages, has_next, has_prev)
     """
     from sqlalchemy import cast, Date, or_
-    from app.schemas.pagination import PaginationMetadata
+    from app.utils.pagination import paginate, calculate_skip
     
     # Build base query with joins for search
     query = db.query(Application).options(
@@ -296,9 +296,6 @@ def list_applications(
     if candidate_id:
         query = query.filter(Application.candidate_id == candidate_id)
     
-    # Get total count before pagination
-    total = query.count()
-    
     # Apply sorting
     valid_sort_fields = ["submitted_at", "updated_at"]
     if sort_by not in valid_sort_fields:
@@ -310,23 +307,9 @@ def list_applications(
     else:
         query = query.order_by(sort_column.desc())
     
-    # Apply pagination
-    offset = (page - 1) * per_page
-    applications = query.offset(offset).limit(per_page).all()
-    
-    # Calculate pagination metadata
-    total_pages = (total + per_page - 1) // per_page  # Ceiling division
-    has_next = page < total_pages
-    has_prev = page > 1
-    
-    metadata = PaginationMetadata(
-        total=total,
-        page=page,
-        per_page=per_page,
-        total_pages=total_pages,
-        has_next=has_next,
-        has_prev=has_prev
-    )
+    # Apply pagination using utility
+    skip = calculate_skip(page, per_page)
+    applications, metadata = paginate(query, skip=skip, limit=per_page)
     
     return {
         "items": applications,

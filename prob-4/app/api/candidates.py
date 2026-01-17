@@ -14,6 +14,7 @@ from app.models.candidate import Candidate
 from app.models.application import Application
 from app.schemas.candidate import CandidateCreate, CandidateUpdate, CandidateResponse
 from app.schemas.application import ApplicationResponse
+from app.utils.pagination import paginate
 
 router = APIRouter(prefix="/candidates", tags=["Candidates"])
 
@@ -123,26 +124,23 @@ def get_candidate_applications(
             detail=f"Candidate with ID {candidate_id} not found"
         )
     
-    # Get total count
-    total = db.query(Application).filter(
-        Application.candidate_id == candidate_id,
-        Application.deleted_at.is_(None)
-    ).count()
-    
-    # Get paginated applications
-    applications = db.query(Application).options(
+    # Build query
+    query = db.query(Application).options(
         joinedload(Application.job)
     ).filter(
         Application.candidate_id == candidate_id,
         Application.deleted_at.is_(None)
-    ).offset(skip).limit(limit).all()
+    )
+    
+    # Apply pagination using utility
+    applications, metadata = paginate(query, skip=skip, limit=limit)
     
     return {
         "applications": applications,
-        "total": total,
+        "total": metadata.total,
         "skip": skip,
         "limit": limit,
-        "has_more": (skip + limit) < total
+        "has_more": metadata.has_next
     }
 
 

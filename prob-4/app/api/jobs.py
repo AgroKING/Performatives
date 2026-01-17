@@ -14,6 +14,7 @@ from app.models.job import Job
 from app.models.application import Application
 from app.schemas.job import JobCreate, JobUpdate, JobResponse
 from app.schemas.application import ApplicationResponse
+from app.utils.pagination import paginate
 
 router = APIRouter(prefix="/jobs", tags=["Jobs"])
 
@@ -121,20 +122,16 @@ def get_job_applications(
     if status_filter:
         query = query.filter(Application.status == status_filter)
     
-    # Get total count
-    total = query.count()
-    
-    # Get paginated applications
-    applications = query.options(
-        joinedload(Application.candidate)
-    ).offset(skip).limit(limit).all()
+    # Apply pagination using utility
+    query = query.options(joinedload(Application.candidate))
+    applications, metadata = paginate(query, skip=skip, limit=limit)
     
     return {
         "applications": applications,
-        "total": total,
+        "total": metadata.total,
         "skip": skip,
         "limit": limit,
-        "has_more": (skip + limit) < total,
+        "has_more": metadata.has_next,
         "status_filter": status_filter
     }
 
