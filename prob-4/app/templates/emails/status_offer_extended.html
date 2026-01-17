@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Offer Extended</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            color: #333;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            margin: -30px -30px 30px -30px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #FF9800;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .info-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #FF9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .notes {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .celebration {
+            text-align: center;
+            font-size: 48px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎉 Congratulations!</h1>
+        </div>
+
+        <div class="celebration">🎊 🎈 🎁</div>
+
+        <p>Dear {{ candidate_name }},</p>
+
+        <p>We are thrilled to extend an offer for the <strong>{{ job_title }}</strong> position at <strong>{{
+                company_name }}</strong>!</p>
+
+        <div class="info-box">
+            <p><strong>Status Update:</strong></p>
+            <p>{{ old_status }} → <span class="status-badge">{{ new_status }}</span></p>
+        </div>
+
+        <h2>What's Next?</h2>
+        <p>You will receive a formal offer letter within the next 24-48 hours containing:</p>
+        <ul>
+            <li>💼 Position details and responsibilities</li>
+            <li>💰 Compensation and benefits package</li>
+            <li>📅 Proposed start date</li>
+            <li>📋 Terms and conditions</li>
+        </ul>
+
+        <p><strong>Please note:</strong> The offer letter will require your signature and response within the timeframe
+            specified in the document.</p>
+
+        {% if notes %}
+        <div class="notes">
+            <p><strong>📝 Message from the Team:</strong></p>
+            <p>{{ notes }}</p>
+        </div>
+        {% endif %}
+
+        <p>We're excited about the possibility of you joining our team and look forward to your response!</p>
+
+        <p>Warm regards,<br>
+            <strong>{{ company_name }} Recruitment Team</strong>
+        </p>
+
+        <div class="footer">
+            <p>This is an automated notification from our Applicant Tracking System.</p>
+            <p>Sent on: {{ timestamp }}</p>
+        </div>
+    </div>
+</body>
+
+</html>

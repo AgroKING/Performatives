@@ -1,0 +1,4 @@
+# Add pre-commit to requirements
+pre-commit==4.0.1
+bandit==1.7.10
+interrogate==1.7.0

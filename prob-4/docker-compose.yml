@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: ats_postgres
+    environment:
+      POSTGRES_USER: ats_user
+      POSTGRES_PASSWORD: ats_password
+      POSTGRES_DB: ats_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ats_user -d ats_db" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ats_network
+
+  # FastAPI Application
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ats_api
+    environment:
+      DATABASE_URL: postgresql://ats_user:ats_password@postgres:5432/ats_db
+      SECRET_KEY: ${SECRET_KEY:-your-super-secret-key-change-in-production}
+      DEBUG: ${DEBUG:-False}
+      ENVIRONMENT: ${ENVIRONMENT:-production}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+      - ./alembic:/app/alembic
+      - ./logs:/app/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+    networks:
+      - ats_network
+    restart: unless-stopped
+
+  # Redis (for future caching)
+  redis:
+    image: redis:7-alpine
+    container_name: ats_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - ats_network
+    restart: unless-stopped
+
+  # pgAdmin (Database Management UI)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: ats_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@ats-api.example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    networks:
+      - ats_network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+
+networks:
+  ats_network:
+    driver: bridge
