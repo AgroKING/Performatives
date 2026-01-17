@@ -88,10 +88,4 @@ prob-3/
 └── tailwind.config.js
 ```
 
-## 🤝 Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request for any enhancements.
-
----
-
-**Built with ❤️ by a 10x Engineer Agent.**
