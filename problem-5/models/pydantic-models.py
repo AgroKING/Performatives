@@ -14,7 +14,7 @@ DifficultyLevel = Literal[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 SeniorityLevel = Literal['Junior', 'Mid', 'Senior', 'Lead', 'Principal']
 ImportanceLevel = Literal['Critical', 'High', 'Medium', 'Low']
 
-
+#class skill delcaration
 class Skill(BaseModel):
     """Represents a single skill in the taxonomy"""
     id: str = Field(..., description="Unique skill identifier")
