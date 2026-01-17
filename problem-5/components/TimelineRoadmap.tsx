@@ -10,7 +10,8 @@ interface LearningPathStep {
     difficulty?: number;
     estimated_weeks: number;
     prerequisites?: string[];
-    reason: string;
+    prerequisites_met?: boolean;
+    reason?: string;
 }
 
 interface LearningPhase {
@@ -196,8 +197,8 @@ export default function TimelineRoadmap({ phases, recommendedResources }: Timeli
                                                                             )}
                                                                             <span className="text-xs text-slate-400">•</span>
                                                                             <span className={`text-xs ${resource.difficulty === 'Beginner' ? 'text-success-600' :
-                                                                                    resource.difficulty === 'Intermediate' ? 'text-primary-600' :
-                                                                                        'text-danger-600'
+                                                                                resource.difficulty === 'Intermediate' ? 'text-primary-600' :
+                                                                                    'text-danger-600'
                                                                                 }`}>
                                                                                 {resource.difficulty}
                                                                             </span>
