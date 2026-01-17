@@ -272,38 +272,56 @@ graph TB
     subgraph "Backend Layer"
         C[problem-1: Matching API<br/>FastAPI]
         D[problem-5: API Routes<br/>Next.js API]
+        E[prob-4: ATS API<br/>FastAPI + SQLAlchemy]
     end
     
     subgraph "Data Layer"
-        E[Skill Taxonomy<br/>40 Skills]
-        F[Job Postings<br/>Mock Data]
-        G[Candidate Profiles<br/>Presets]
+        F[Skill Taxonomy<br/>40 Skills]
+        G[Job Postings<br/>Mock Data]
+        H[Candidate Profiles<br/>Presets]
+        I[ATS Database<br/>PostgreSQL/SQLite]
     end
     
     subgraph "Algorithm Layer"
-        H[Weighted Scoring<br/>5 Criteria]
-        I[Gap Analysis<br/>Skill Matching]
-        J[Roadmap Generator<br/>Topological Sort]
+        J[Weighted Scoring<br/>5 Criteria]
+        K[Gap Analysis<br/>Skill Matching]
+        L[Roadmap Generator<br/>Topological Sort]
+        M[Status Flow<br/>State Machine]
     end
     
-    A --> F
-    A --> H
+    subgraph "Security Layer"
+        N[JWT Auth<br/>Argon2]
+        O[Role-Based Access<br/>ADMIN/RECRUITER/CANDIDATE]
+    end
+    
+    A --> G
+    A --> J
     B --> D
-    D --> I
-    D --> J
-    C --> H
-    C --> E
-    D --> E
-    I --> E
-    J --> E
+    D --> K
+    D --> L
+    C --> J
+    C --> F
+    D --> F
+    K --> F
+    L --> F
+    
+    E --> I
+    E --> M
+    E --> N
+    N --> O
+    O --> E
     
     style A fill:#61DAFB,color:#000
     style B fill:#000,color:#fff
     style C fill:#009688,color:#fff
     style D fill:#000,color:#fff
-    style H fill:#4CAF50,color:#fff
-    style I fill:#FF9800,color:#fff
-    style J fill:#9C27B0,color:#fff
+    style E fill:#009688,color:#fff
+    style J fill:#4CAF50,color:#fff
+    style K fill:#FF9800,color:#fff
+    style L fill:#9C27B0,color:#fff
+    style M fill:#E91E63,color:#fff
+    style N fill:#FF5722,color:#fff
+    style O fill:#795548,color:#fff
 ```
 
 ### Data Flow
@@ -316,6 +334,7 @@ sequenceDiagram
     participant Algorithm
     participant Database
     
+    Note over User,Database: Job Matching & Skill Analysis Flow
     User->>Frontend: Input (Candidate + Jobs/Role)
     Frontend->>API: POST /match or /analyze
     API->>Algorithm: Calculate Match/Gap
@@ -324,6 +343,23 @@ sequenceDiagram
     Algorithm-->>API: Computed Results
     API-->>Frontend: JSON Response
     Frontend-->>User: Visual Dashboard
+    
+    Note over User,Database: ATS Application Management Flow
+    User->>Frontend: Login Request
+    Frontend->>API: POST /auth/login
+    API->>Database: Verify Credentials (Argon2)
+    Database-->>API: User Data
+    API-->>Frontend: JWT Token + User Info
+    
+    User->>Frontend: Create/Update Application
+    Frontend->>API: POST /applications (with JWT)
+    API->>API: Validate JWT & Check Role
+    API->>Algorithm: Validate Status Transition
+    Algorithm-->>API: Transition Valid/Invalid
+    API->>Database: Save Application + History
+    Database-->>API: Confirmation
+    API-->>Frontend: Success Response
+    Frontend-->>User: Updated Dashboard
 ```
 
 ---
