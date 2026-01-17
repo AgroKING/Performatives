@@ -16,6 +16,7 @@
 - [Projects](#projects)
   - [prob-3: JobMatch Dashboard](#prob-3-jobmatch-dashboard)
   - [problem-1: Job Matching API](#problem-1-job-matching-api)
+  - [prob-4: ATS API](#prob-4-ats-api)
   - [problem-5: Skill Gap Analyzer](#problem-5-skill-gap-analyzer)
 - [Architecture](#architecture)
 - [Technology Stack](#technology-stack)
@@ -26,7 +27,7 @@
 
 ## 🎯 Overview
 
-This repository contains three interconnected applications demonstrating expertise in:
+This repository contains four interconnected applications demonstrating expertise in:
 
 - **Frontend Development**: React 19, Next.js 14, TypeScript, Tailwind CSS
 - **Backend Development**: FastAPI, Python, Pydantic, RESTful APIs
@@ -127,6 +128,73 @@ graph TD
 **Tech Stack:** FastAPI, Python 3.9+, Pydantic, Uvicorn, pytest, Docker
 
 **[View Details →](problem-1/README.md)**
+
+---
+
+### prob-4: ATS API
+
+**Production-Ready Applicant Tracking System with JWT Authentication**
+
+A comprehensive FastAPI application for managing job applications with advanced features including JWT authentication, status flow validation, email notifications, and analytics.
+
+```mermaid
+graph TD
+    A[Client Request] --> B{Authenticated?}
+    B -->|No| C[401 Unauthorized]
+    B -->|Yes| D[JWT Token Valid?]
+    D -->|No| C
+    D -->|Yes| E[Role Check]
+    E -->|Insufficient| F[403 Forbidden]
+    E -->|Authorized| G[Process Request]
+    
+    G --> H[Applications API]
+    G --> I[Candidates API]
+    G --> J[Jobs API]
+    
+    H --> K[Status Manager]
+    K --> L{Valid Transition?}
+    L -->|No| M[400 Bad Request]
+    L -->|Yes| N[Update Status]
+    N --> O[Create History]
+    O --> P[Send Email]
+    P --> Q[200 OK]
+    
+    H --> R[Advanced Stats]
+    R --> S[Conversion Metrics]
+    R --> T[Funnel Data]
+    R --> U[Daily Trends]
+    
+    style B fill:#FF9800
+    style K fill:#4CAF50
+    style R fill:#2196F3
+```
+
+**Status Flow State Machine:**
+```
+SUBMITTED → SCREENING → INTERVIEW_SCHEDULED → INTERVIEWED → OFFER_EXTENDED → HIRED
+    ↓           ↓              ↓                  ↓               ↓
+REJECTED    REJECTED       REJECTED          REJECTED        REJECTED
+```
+
+**Key Features:**
+- 🔐 **JWT Authentication**: Argon2 password hashing, role-based access (ADMIN, RECRUITER, CANDIDATE)
+- 🔄 **Status Flow Validation**: State machine prevents invalid transitions
+- 📧 **Email Notifications**: Jinja2 templates for status changes
+- 📊 **Advanced Analytics**: Conversion rates, funnel data, daily trends (Chart.js ready)
+- 🔍 **Advanced Search**: Partial matching, multiple filters, date ranges, pagination
+- 📝 **Complete Audit Trail**: StatusHistory tracks all changes
+- 🐳 **Production Ready**: Docker Compose, comprehensive tests, OpenAPI docs
+
+**Security & Quality:**
+- ✅ **Argon2 Hashing**: Modern, secure password hashing (replaced bcrypt)
+- ✅ **Type Safety**: Full type hints with mypy strict mode
+- ✅ **Custom Exceptions**: Structured error hierarchy
+- ✅ **Code Quality**: Black, isort, pre-commit hooks
+- ✅ **67.5% Test Coverage**: 52/77 tests passing with pytest
+
+**Tech Stack:** FastAPI, SQLAlchemy, Pydantic, Argon2, python-jose, Jinja2, pytest, Docker
+
+**[View Details →](prob-4/README.md)**
 
 ---
 
@@ -320,6 +388,20 @@ uvicorn app.main:app --reload
 # Open http://localhost:8000/docs
 ```
 
+### Run prob-4 (ATS API)
+```bash
+cd prob-4
+pip install -r requirements.txt
+# Setup environment
+cp .env.example .env
+# Edit .env with your SECRET_KEY
+# Run migrations
+alembic upgrade head
+# Start server
+uvicorn app.main:app --reload
+# Open http://localhost:8000/api/v1/docs
+```
+
 ### Run problem-5 (Skill Analyzer)
 ```bash
 cd problem-5
@@ -332,6 +414,10 @@ npm run dev
 ```bash
 # problem-1
 cd problem-1
+docker-compose up --build
+
+# prob-4
+cd prob-4
 docker-compose up --build
 
 # problem-5
@@ -363,6 +449,25 @@ Performatives/
 │   │   └── algorithm.py        # Matching algorithm
 │   ├── tests/
 │   │   └── test_main.py        # 13 comprehensive tests
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   ├── requirements.txt
+│   └── README.md
+│
+├── prob-4/                      # ATS API
+│   ├── app/
+│   │   ├── main.py             # FastAPI application
+│   │   ├── models/             # SQLAlchemy models
+│   │   ├── schemas/            # Pydantic schemas
+│   │   ├── api/                # API routers
+│   │   ├── services/           # Business logic
+│   │   └── utils/              # Auth, enums, helpers
+│   ├── tests/                  # 77 comprehensive tests
+│   │   ├── test_models.py
+│   │   ├── test_api_endpoints.py
+│   │   ├── test_status_validation.py
+│   │   └── conftest.py
+│   ├── alembic/                # Database migrations
 │   ├── Dockerfile
 │   ├── docker-compose.yml
 │   ├── requirements.txt
@@ -432,6 +537,7 @@ npm test
 |---------|-------|----------|--------|
 | prob-3 | 11 | 85%+ | ✅ Passing |
 | problem-1 | 13 | 95%+ | ✅ Passing |
+| prob-4 | 77 | 67.5% | ✅ 52 Passing |
 | problem-5 | TBD | TBD | 🚧 In Progress |
 
 ---
