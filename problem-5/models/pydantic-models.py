@@ -6,6 +6,7 @@ Pydantic Data Models (Python Alternative)
 from typing import List, Optional, Literal
 from datetime import datetime
 from pydantic import BaseModel, Field, EmailStr
+#error free till now
 
 
 SkillCategory = Literal['Frontend', 'Backend', 'DevOps', 'Database']
@@ -39,7 +40,7 @@ class Skill(BaseModel):
             }
         }
 
-
+#error free again
 class CandidateSkill(BaseModel):
     """Represents a skill that a candidate possesses with proficiency level"""
     skill_id: str
@@ -59,7 +60,7 @@ class Candidate(BaseModel):
     created_at: datetime
     updated_at: datetime
 
-
+#no errors
 class RoleSkillRequirement(BaseModel):
     """Represents a skill requirement for a specific role"""
     skill_id: str
@@ -91,7 +92,7 @@ class CategoryInfo(BaseModel):
     name: str
     description: str
     skill_count: int
-
+#no errors
 
 class SkillTaxonomy(BaseModel):
     """Complete skill taxonomy structure"""
@@ -109,7 +110,7 @@ class SkillGap(BaseModel):
     gap_score: int = Field(..., description="Difference between required and current")
     priority: ImportanceLevel
 
-
+#class declaration
 class LearningPathStep(BaseModel):
     """Represents a step in the learning path"""
     order: int = Field(..., ge=1)
@@ -118,7 +119,7 @@ class LearningPathStep(BaseModel):
     prerequisites_met: bool
     reason: str
 
-
+#more class declaration
 class LearningRoadmap(BaseModel):
     """Learning roadmap generated for a candidate"""
     candidate_id: str
