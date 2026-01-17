@@ -17,8 +17,7 @@ from app.models.candidate import Candidate
 from app.models.job import Job
 from app.models.application import Application
 from app.utils.auth import get_password_hash, create_access_token
-from app.utils.enums import ApplicationStatus, JobStatus
-from app.models.user import UserRole
+from app.utils.enums import ApplicationStatus, JobStatus, UserRole
 
 # SQLite in-memory database for testing
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"

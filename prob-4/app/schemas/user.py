@@ -9,7 +9,7 @@ from typing import Optional
 from datetime import datetime
 from uuid import UUID
 
-from app.models.user import UserRole
+from app.utils.enums import UserRole
 
 
 class UserBase(BaseModel):

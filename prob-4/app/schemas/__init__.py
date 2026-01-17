@@ -23,6 +23,13 @@ from app.schemas.application import (
     ApplicationStatsResponse
 )
 from app.schemas.status_history import StatusHistoryResponse
+from app.schemas.user import (
+    UserRegister,
+    UserLogin,
+    UserResponse,
+    Token,
+    TokenData
+)
 
 __all__ = [
     # Candidate schemas
@@ -42,4 +49,10 @@ __all__ = [
     "ApplicationStatsResponse",
     # Status history schemas
     "StatusHistoryResponse",
+    # User schemas
+    "UserRegister",
+    "UserLogin",
+    "UserResponse",
+    "Token",
+    "TokenData",
 ]

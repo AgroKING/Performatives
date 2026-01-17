@@ -9,6 +9,7 @@ from app.models.candidate import Candidate
 from app.models.job import Job
 from app.models.application import Application
 from app.models.status_history import StatusHistory
+from app.models.user import User
 
 # Export all models
 __all__ = [
@@ -17,4 +18,5 @@ __all__ = [
     "Job",
     "Application",
     "StatusHistory",
+    "User",
 ]

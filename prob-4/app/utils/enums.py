@@ -31,6 +31,13 @@ class JobStatus(str, Enum):
     CANCELLED = "CANCELLED"
 
 
+class UserRole(str, Enum):
+    """User role enum for role-based access control."""
+    ADMIN = "ADMIN"
+    RECRUITER = "RECRUITER"
+    CANDIDATE = "CANDIDATE"
+
+
 # Valid status transitions for state machine
 STATUS_TRANSITIONS = {
     ApplicationStatus.SUBMITTED: [

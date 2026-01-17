@@ -10,7 +10,8 @@ from sqlalchemy.orm import Session
 from typing import Optional
 
 from app.database import get_db
-from app.models.user import User, UserRole
+from app.models.user import User
+from app.utils.enums import UserRole
 from app.utils.auth import decode_access_token
 
 # HTTP Bearer token scheme

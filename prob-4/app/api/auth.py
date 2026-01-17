@@ -17,6 +17,7 @@ from app.utils.auth import (
     create_access_token,
     ACCESS_TOKEN_EXPIRE_MINUTES
 )
+from app.utils.dependencies import get_current_user
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 

@@ -4,19 +4,13 @@ User Model
 Represents system users with authentication and role-based access.
 """
 
-from sqlalchemy import Column, String, DateTime, Enum, Index
+from sqlalchemy import Column, String, DateTime, Enum, Index, Boolean
 from sqlalchemy.dialects.postgresql import UUID
 from datetime import datetime, timezone
 import uuid
 
 from app.database import Base
-
-
-class UserRole(str, Enum):
-    """User role enum for role-based access control."""
-    ADMIN = "ADMIN"
-    RECRUITER = "RECRUITER"
-    CANDIDATE = "CANDIDATE"
+from app.utils.enums import UserRole
 
 
 class User(Base):

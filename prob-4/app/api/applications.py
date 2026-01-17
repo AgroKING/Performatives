@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session, joinedload
 from sqlalchemy import func
 from typing import List, Optional
 from uuid import UUID
-from datetime import datetime
+from datetime import datetime, date
 
 from app.database import get_db
 from app.models.application import Application
@@ -23,6 +23,7 @@ from app.schemas.application import (
     StatusChangeRequest,
     ApplicationStatsResponse
 )
+from app.schemas.stats import AdvancedStatsResponse
 from app.services.status_manager import StatusManager
 from app.services.email_service import get_email_service
 
@@ -335,7 +336,7 @@ def list_applications(
 
 @router.get(
     "/stats/advanced",
-    response_model="AdvancedStatsResponse",
+    response_model=AdvancedStatsResponse,
     summary="Get advanced application statistics",
     description="Comprehensive analytics with conversion rates, time metrics, funnel data, and daily trends."
 )
