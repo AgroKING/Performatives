@@ -621,8 +621,4 @@ Demonstrating expertise in:
 
 <div align="center">
 
-### ⭐ Star this repo if you find it useful!
-
-Made with modern web technologies and best practices
-
 </div>
