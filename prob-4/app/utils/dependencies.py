@@ -47,8 +47,13 @@ async def get_current_user(
     if token_data is None:
         raise credentials_exception
     
+    import uuid
     # Get user from database
-    user = db.query(User).filter(User.id == token_data.user_id).first()
+    try:
+        user_uuid = uuid.UUID(token_data.user_id)
+        user = db.query(User).filter(User.id == user_uuid).first()
+    except ValueError:
+        raise credentials_exception
     
     if user is None:
         raise credentials_exception

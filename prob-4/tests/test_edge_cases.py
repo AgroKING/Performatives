@@ -189,7 +189,7 @@ class TestSoftDelete:
         assert response.status_code == 200
         
         data = response.json()
-        app_ids = [app["id"] for app in data]
+        app_ids = [app["id"] for app in data["items"]]
         assert str(test_application.id) not in app_ids
     
     def test_soft_deleted_application_not_found(self, client, auth_headers, test_application, db_session):
@@ -245,19 +245,19 @@ class TestEdgeCaseData:
     
     def test_pagination_edge_cases(self, client, auth_headers):
         """Test pagination with edge values."""
-        # Test with skip=0, limit=0 (should return empty)
+        # Test with per_page=1 (should return 1 or 0 items)
         response = client.get(
             "/api/v1/applications/",
             headers=auth_headers,
-            params={"skip": 0, "limit": 1}
+            params={"page": 1, "per_page": 1}
         )
         assert response.status_code == 200
         
-        # Test with large skip value
+        # Test with large page value
         response = client.get(
             "/api/v1/applications/",
             headers=auth_headers,
-            params={"skip": 1000, "limit": 10}
+            params={"page": 1000, "per_page": 10}
         )
         assert response.status_code == 200
-        assert len(response.json()) == 0
+        assert len(response.json()["items"]) == 0

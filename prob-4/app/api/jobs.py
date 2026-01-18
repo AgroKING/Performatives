@@ -12,7 +12,12 @@ from uuid import UUID
 from app.database import get_db
 from app.models.job import Job
 from app.models.application import Application
-from app.schemas.job import JobCreate, JobUpdate, JobResponse
+from app.schemas.job import (
+    JobCreate, 
+    JobUpdate, 
+    JobResponse,
+    JobApplicationsResponse
+)
 from app.schemas.application import ApplicationResponse
 from app.utils.pagination import paginate
 
@@ -74,7 +79,7 @@ def get_job(
 
 @router.get(
     "/{job_id}/applications",
-    response_model=dict,
+    response_model=JobApplicationsResponse,
     summary="Get job applications",
     description="List all applications for a specific job with status filtering and pagination."
 )

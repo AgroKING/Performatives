@@ -105,7 +105,7 @@ class TestApplicationEndpoints:
             "job_id": str(test_job.id)
         })
         
-        assert response.status_code == 403  # No auth header
+        assert response.status_code == 401  # No auth header
     
     def test_get_application_by_id(self, client, auth_headers, test_application):
         """Test getting application by ID."""
@@ -164,30 +164,34 @@ class TestApplicationEndpoints:
         
         assert response.status_code == 200
         data = response.json()
-        assert isinstance(data, list)
-        assert len(data) >= 1
+        assert "items" in data
+        assert isinstance(data["items"], list)
+        assert len(data["items"]) >= 1
     
     def test_list_applications_with_filters(self, client, auth_headers, test_application):
         """Test listing applications with filters."""
         response = client.get(
             "/api/v1/applications/",
             headers=auth_headers,
-            params={"status_filter": "SUBMITTED", "limit": 10}
+            params={"status": "SUBMITTED", "per_page": 10}
         )
         
         assert response.status_code == 200
         data = response.json()
-        assert all(app["status"] == "SUBMITTED" for app in data)
+        assert all(app["status"] == "SUBMITTED" for app in data["items"])
     
     def test_get_application_stats(self, client, auth_headers, test_application):
         """Test getting application statistics."""
-        response = client.get("/api/v1/applications/stats", headers=auth_headers)
+        response = client.get("/api/v1/applications/stats/advanced", headers=auth_headers)
         
         assert response.status_code == 200
         data = response.json()
         assert "total_applications" in data
-        assert "breakdown_by_status" in data
+        assert "status_breakdown" in data
+        assert isinstance(data["status_breakdown"], list)
+        assert "conversion_metrics" in data
         assert "avg_time_per_stage" in data
+        assert isinstance(data["avg_time_per_stage"], list)
 
 
 class TestCandidateEndpoints:

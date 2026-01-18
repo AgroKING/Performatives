@@ -21,7 +21,8 @@ from app.schemas.application import (
     ApplicationResponse,
     ApplicationWithHistory,
     StatusChangeRequest,
-    ApplicationStatsResponse
+    ApplicationStatsResponse,
+    ApplicationListResponse
 )
 from app.schemas.stats import AdvancedStatsResponse
 from app.services.status_manager import StatusManager
@@ -102,6 +103,183 @@ async def create_application(
     response.headers["Location"] = f"/api/v1/applications/{db_application.id}"
     
     return db_application
+
+
+@router.get(
+    "/stats/advanced",
+    response_model=AdvancedStatsResponse,
+    summary="Get advanced application statistics",
+    description="Comprehensive analytics with conversion rates, time metrics, funnel data, and daily trends."
+)
+def get_advanced_stats(
+    job_id: Optional[UUID] = Query(None, description="Filter by job ID"),
+    date_from: Optional[date] = Query(None, description="Start date (YYYY-MM-DD)"),
+    date_to: Optional[date] = Query(None, description="End date (YYYY-MM-DD)"),
+    db: Session = Depends(get_db)
+):
+    """
+    Get advanced application statistics optimized for Chart.js visualization.
+    
+    Returns:
+    1. Total applications by status (breakdown)
+    2. Conversion rates (Applied → Offered percentage)
+    3. Average time in each stage (in days)
+    4. Funnel visualization data (counts at each stage)
+    5. Daily application trend (last 30 days)
+    
+    All data formatted for Chart.js charts.
+    """
+    from app.schemas.stats import (
+        AdvancedStatsResponse,
+        StatusBreakdown,
+        ConversionMetrics,
+        StageTimeMetrics,
+        FunnelStage
+    )
+    from app.utils.enums import ApplicationStatus
+    from datetime import datetime, timedelta, timezone
+    from sqlalchemy import cast, Date
+    
+    # Base query
+    query = db.query(Application).filter(Application.deleted_at.is_(None))
+    
+    # Apply filters
+    if job_id:
+        query = query.filter(Application.job_id == job_id)
+    if date_from:
+        query = query.filter(cast(Application.submitted_at, Date) >= date_from)
+    if date_to:
+        query = query.filter(cast(Application.submitted_at, Date) <= date_to)
+    
+    total_applications = query.count()
+    
+    # 1. STATUS BREAKDOWN
+    status_counts = db.query(
+        Application.status,
+        func.count(Application.id).label('count')
+    ).filter(Application.deleted_at.is_(None))
+    
+    if job_id:
+        status_counts = status_counts.filter(Application.job_id == job_id)
+    if date_from:
+        status_counts = status_counts.filter(cast(Application.submitted_at, Date) >= date_from)
+    if date_to:
+        status_counts = status_counts.filter(cast(Application.submitted_at, Date) <= date_to)
+    
+    status_counts = status_counts.group_by(Application.status).all()
+    
+    status_breakdown = []
+    status_dict = {}
+    for app_status, count in status_counts:
+        percentage = (count / total_applications * 100) if total_applications > 0 else 0
+        status_breakdown.append(StatusBreakdown(
+            status=app_status.value,
+            count=count,
+            percentage=round(percentage, 2)
+        ))
+        status_dict[app_status.value] = count
+    
+    # 2. CONVERSION METRICS
+    submitted_count = status_dict.get("SUBMITTED", 0) + status_dict.get("SCREENING", 0) + \
+                     status_dict.get("INTERVIEW_SCHEDULED", 0) + status_dict.get("INTERVIEWED", 0) + \
+                     status_dict.get("OFFER_EXTENDED", 0) + status_dict.get("HIRED", 0)
+    
+    screening_count = status_dict.get("SCREENING", 0) + status_dict.get("INTERVIEW_SCHEDULED", 0) + \
+                     status_dict.get("INTERVIEWED", 0) + status_dict.get("OFFER_EXTENDED", 0) + \
+                     status_dict.get("HIRED", 0)
+    
+    interview_count = status_dict.get("INTERVIEW_SCHEDULED", 0) + status_dict.get("INTERVIEWED", 0) + \
+                     status_dict.get("OFFER_EXTENDED", 0) + status_dict.get("HIRED", 0)
+    
+    offer_count = status_dict.get("OFFER_EXTENDED", 0) + status_dict.get("HIRED", 0)
+    hired_count = status_dict.get("HIRED", 0)
+    
+    conversion_metrics = ConversionMetrics(
+        applied_to_screening=round((screening_count / submitted_count * 100), 2) if submitted_count > 0 else None,
+        screening_to_interview=round((interview_count / screening_count * 100), 2) if screening_count > 0 else None,
+        interview_to_offer=round((offer_count / interview_count * 100), 2) if interview_count > 0 else None,
+        offer_to_hired=round((hired_count / offer_count * 100), 2) if offer_count > 0 else None,
+        overall_conversion=round((hired_count / submitted_count * 100), 2) if submitted_count > 0 else None
+    )
+    
+    # 3. AVERAGE TIME PER STAGE
+    stage_time_metrics = []
+    for app_status in ApplicationStatus:
+        apps_in_stage = query.filter(Application.status == app_status).all()
+        
+        if apps_in_stage:
+            days_list = [(app.updated_at - app.submitted_at).total_seconds() / 86400 for app in apps_in_stage]
+            stage_time_metrics.append(StageTimeMetrics(
+                stage=app_status.value,
+                avg_days=round(sum(days_list) / len(days_list), 2),
+                min_days=round(min(days_list), 2),
+                max_days=round(max(days_list), 2),
+                count=len(apps_in_stage)
+            ))
+    
+    # 4. FUNNEL DATA (Chart.js ready)
+    funnel_stages = [
+        ("Applied", submitted_count, "#3B82F6"),
+        ("Screening", screening_count, "#10B981"),
+        ("Interview", interview_count, "#F59E0B"),
+        ("Offer", offer_count, "#EF4444"),
+        ("Hired", hired_count, "#8B5CF6")
+    ]
+    
+    funnel_data = {
+        "labels": [stage[0] for stage in funnel_stages],
+        "values": [stage[1] for stage in funnel_stages],
+        "colors": [stage[2] for stage in funnel_stages]
+    }
+    
+    # 5. DAILY TRENDS (last 30 days or date range)
+    if not date_from:
+        date_from = (datetime.now(timezone.utc) - timedelta(days=30)).date()
+    if not date_to:
+        date_to = datetime.now(timezone.utc).date()
+    
+    daily_counts = db.query(
+        cast(Application.submitted_at, Date).label('date'),
+        func.count(Application.id).label('count')
+    ).filter(
+        Application.deleted_at.is_(None),
+        cast(Application.submitted_at, Date) >= date_from,
+        cast(Application.submitted_at, Date) <= date_to
+    )
+    
+    if job_id:
+        daily_counts = daily_counts.filter(Application.job_id == job_id)
+    
+    daily_counts = daily_counts.group_by(cast(Application.submitted_at, Date)).order_by('date').all()
+    
+    # Fill in missing dates with 0
+    date_dict = {str(row.date): row.count for row in daily_counts}
+    current_date = date_from
+    daily_labels = []
+    daily_values = []
+    
+    while current_date <= date_to:
+        daily_labels.append(str(current_date))
+        daily_values.append(date_dict.get(str(current_date), 0))
+        current_date += timedelta(days=1)
+    
+    daily_trends = {
+        "labels": daily_labels,
+        "values": daily_values
+    }
+    
+    return AdvancedStatsResponse(
+        total_applications=total_applications,
+        date_range={
+            "from": str(date_from) if date_from else None,
+            "to": str(date_to) if date_to else None
+        },
+        status_breakdown=status_breakdown,
+        conversion_metrics=conversion_metrics,
+        avg_time_per_stage=stage_time_metrics,
+        funnel_data=funnel_data,
+        daily_trends=daily_trends
+    )
 
 
 @router.get(
@@ -204,7 +382,7 @@ async def update_application_status(
 
 @router.get(
     "/",
-    response_model=dict,
+    response_model=ApplicationListResponse,
     summary="List applications with advanced search",
     description="Search and filter applications with pagination and metadata."
 )

@@ -9,6 +9,8 @@ from typing import List, Optional
 from datetime import datetime
 from uuid import UUID
 
+from app.schemas.application import ApplicationResponse
+
 from app.utils.enums import JobStatus
 
 
@@ -166,3 +168,13 @@ class JobResponse(JobBase):
             }
         }
     )
+
+
+class JobApplicationsResponse(BaseModel):
+    """Schema for job applications list."""
+    applications: List[ApplicationResponse]
+    total: int
+    skip: int
+    limit: int
+    has_more: bool
+    status_filter: Optional[str] = None

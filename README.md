@@ -190,7 +190,7 @@ REJECTED    REJECTED       REJECTED          REJECTED        REJECTED
 - ✅ **Type Safety**: Full type hints with mypy strict mode
 - ✅ **Custom Exceptions**: Structured error hierarchy
 - ✅ **Code Quality**: Black, isort, pre-commit hooks
-- ✅ **67.5% Test Coverage**: 52/77 tests passing with pytest
+- ⚠️ **60.6% Test Coverage**: 52/77 tests passing, 25 failed
 
 **Tech Stack:** FastAPI, SQLAlchemy, Pydantic, Argon2, python-jose, Jinja2, pytest, Docker
 
@@ -571,9 +571,9 @@ npm test
 
 | Project | Tests | Coverage | Status |
 |---------|-------|----------|--------|
-| prob-3 | 11 | 85%+ | ✅ Passing |
-| problem-1 | 13 | 95%+ | ✅ Passing |
-| prob-4 | 77 | 67.5% | ✅ 52 Passing |
+| prob-3 | 11 | 79.5% | ✅ Passing |
+| problem-1 | 13 | 87% | ✅ Passing |
+| prob-4 | 77 | 60.6% | ⚠️ 52 Passing, 25 Failed |
 | problem-5 | TBD | TBD | 🚧 In Progress |
 
 ---

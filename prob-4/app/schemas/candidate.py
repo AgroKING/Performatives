@@ -9,6 +9,12 @@ from typing import List, Optional
 from datetime import datetime
 from uuid import UUID
 
+# Import ApplicationResponse deferred or use generic? 
+# To avoid any potential circularity if ApplicationResponse eventually needs CandidateResponse, 
+# we can put this import inside the file or assume it's fine for now. 
+# Checking application.py, it uses UUID for candidate_id, not CandidateResponse.
+from app.schemas.application import ApplicationResponse
+
 
 class CandidateBase(BaseModel):
     """Base candidate schema with common fields."""
@@ -118,3 +124,12 @@ class CandidateResponse(CandidateBase):
             }
         }
     )
+
+
+class CandidateApplicationsResponse(BaseModel):
+    """Schema for candidate applications list."""
+    applications: List[ApplicationResponse]
+    total: int
+    skip: int
+    limit: int
+    has_more: bool

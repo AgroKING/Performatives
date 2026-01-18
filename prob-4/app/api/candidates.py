@@ -12,7 +12,12 @@ from uuid import UUID
 from app.database import get_db
 from app.models.candidate import Candidate
 from app.models.application import Application
-from app.schemas.candidate import CandidateCreate, CandidateUpdate, CandidateResponse
+from app.schemas.candidate import (
+    CandidateCreate, 
+    CandidateUpdate, 
+    CandidateResponse,
+    CandidateApplicationsResponse
+)
 from app.schemas.application import ApplicationResponse
 from app.utils.pagination import paginate
 
@@ -93,7 +98,7 @@ def get_candidate(
 
 @router.get(
     "/{candidate_id}/applications",
-    response_model=dict,
+    response_model=CandidateApplicationsResponse,
     summary="Get candidate's applications",
     description="List all applications for a specific candidate with pagination."
 )

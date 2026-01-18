@@ -245,3 +245,9 @@ class ApplicationStatsResponse(BaseModel):
             }
         }
     )
+
+
+class ApplicationListResponse(BaseModel):
+    """Schema for paginated application list."""
+    items: List[ApplicationResponse]
+    metadata: Dict[str, Any]
