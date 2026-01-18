@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: performatives-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/landing:/usr/share/nginx/html:ro
+    depends_on:
+      - prob3
+      - problem1
+      - prob4
+      - problem5
+    networks:
+      - performatives-network
+    restart: unless-stopped
+
+  # prob-3: Job Discovery Dashboard (React + Vite)
+  prob3:
+    build: ./prob-3
+    container_name: performatives-prob3
+    ports:
+      - "5173:5173"
+    networks:
+      - performatives-network
+    restart: unless-stopped
+
+  # problem-1: Job Matching API (FastAPI)
+  problem1:
+    build: ./problem-1
+    container_name: performatives-problem1
+    ports:
+      - "8001:8000"
+    networks:
+      - performatives-network
+    restart: unless-stopped
+
+  # prob-4: ATS API (FastAPI + PostgreSQL)
+  prob4:
+    build: ./prob-4
+    container_name: performatives-prob4
+    environment:
+      - DATABASE_URL=postgresql://ats_user:ats_password@postgres:5432/ats_db
+      - SECRET_KEY=your-secret-key-change-in-production
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+    ports:
+      - "8002:8000"
+    depends_on:
+      - postgres
+    networks:
+      - performatives-network
+    restart: unless-stopped
+
+  # problem-5: Skill Gap Analyzer (Next.js)
+  problem5:
+    build: ./problem-5
+    container_name: performatives-problem5
+    ports:
+      - "3000:3000"
+    networks:
+      - performatives-network
+    restart: unless-stopped
+
+  # PostgreSQL Database (for prob-4)
+  postgres:
+    image: postgres:15-alpine
+    container_name: performatives-postgres
+    environment:
+      POSTGRES_DB: ats_db
+      POSTGRES_USER: ats_user
+      POSTGRES_PASSWORD: ats_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - performatives-network
+    restart: unless-stopped
+
+networks:
+  performatives-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local

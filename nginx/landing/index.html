@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performatives - Intelligent Recruitment Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .service-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .service-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-features li {
+            color: #4b5563;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #1f2937;
+            border: 2px solid #e5e7eb;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+            border-color: #d1d5db;
+        }
+
+        .architecture {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        .architecture h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Performatives</h1>
+            <p class="subtitle">Intelligent Recruitment Platform</p>
+            <p class="tagline">End-to-end solution for modern talent acquisition</p>
+        </header>
+
+        <div class="services-grid">
+            <!-- Service 1: Job Discovery -->
+            <div class="service-card">
+                <span class="service-icon">🔍</span>
+                <h2 class="service-title">Job Discovery</h2>
+                <p class="service-description">
+                    Smart job search dashboard with advanced filtering, real-time search, and visual match scores.
+                </p>
+                <ul class="service-features">
+                    <li>50+ curated job listings</li>
+                    <li>Multi-factor filtering</li>
+                    <li>Match score visualization</li>
+                    <li>Save favorite jobs</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="/jobs" class="btn btn-primary">
+                        Launch Dashboard →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 2: Job Matching -->
+            <div class="service-card">
+                <span class="service-icon">🎯</span>
+                <h2 class="service-title">Job Matching Engine</h2>
+                <p class="service-description">
+                    AI-powered matching algorithm that scores candidates against job requirements using weighted
+                    factors.
+                </p>
+                <ul class="service-features">
+                    <li>Weighted scoring (Skills, Location, Salary)</li>
+                    <li>Missing skills identification</li>
+                    <li>Detailed match breakdown</li>
+                    <li>RESTful API</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="/problem-1/index.html" class="btn btn-primary">
+                        Try Matching →
+                    </a>
+                    <a href="/api/match/docs" class="btn btn-secondary">
+                        API Docs
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 3: ATS System -->
+            <div class="service-card">
+                <span class="service-icon">📊</span>
+                <h2 class="service-title">ATS Dashboard</h2>
+                <p class="service-description">
+                    Complete applicant tracking system with authentication, status management, and analytics.
+                </p>
+                <ul class="service-features">
+                    <li>Application lifecycle tracking</li>
+                    <li>Candidate management</li>
+                    <li>Job posting management</li>
+                    <li>Real-time statistics</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="/prob-4/frontend/index.html" class="btn btn-primary">
+                        Open ATS →
+                    </a>
+                    <a href="/api/ats/docs" class="btn btn-secondary">
+                        API Docs
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 4: Skill Gap Analyzer -->
+            <div class="service-card">
+                <span class="service-icon">📈</span>
+                <h2 class="service-title">Skill Gap Analyzer</h2>
+                <p class="service-description">
+                    Personalized career progression tool with skill gap analysis and learning roadmaps.
+                </p>
+                <ul class="service-features">
+                    <li>40+ skills taxonomy</li>
+                    <li>Prerequisite-aware roadmaps</li>
+                    <li>Visual radar charts</li>
+                    <li>Salary projections</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="/skills" class="btn btn-primary">
+                        Analyze Skills →
+                    </a>
+                    <a href="/api/skills/taxonomy" class="btn btn-secondary">
+                        View Taxonomy
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="architecture">
+            <h2>🏗️ Platform Architecture</h2>
+            <p style="text-align: center; margin-bottom: 30px; opacity: 0.9;">
+                Four powerful microservices unified under one platform
+            </p>
+            <div class="tech-stack">
+                <span class="tech-item">React 19</span>
+                <span class="tech-item">Next.js 14</span>
+                <span class="tech-item">FastAPI</span>
+                <span class="tech-item">PostgreSQL</span>
+                <span class="tech-item">Docker</span>
+                <span class="tech-item">Nginx</span>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Performatives Platform</strong> - Built with modern web technologies</p>
+            <p style="margin-top: 10px; opacity: 0.7;">All services running on <code>http://localhost</code></p>
+        </footer>
+    </div>
+</body>
+
+</html>
